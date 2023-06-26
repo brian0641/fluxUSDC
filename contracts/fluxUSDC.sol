@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: BUSL-1.1
+// SPDX-License-Identifier: MIT
 
 /*
  * Simple wrapper contract around fUSDC to create a rebasing ERC20 token ("fluxUSDC")
