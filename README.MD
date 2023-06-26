@@ -8,13 +8,13 @@ The yield of fUSDC is reflected in a changing exchange rate between fUSDC and US
 
 ## Use Case
 
-fluxUSDC is a yield-bearing (through rebasing) stablecoin where one fluxUSDC is worth 1 USDC. Users' may wish to hold USDC in their wallet or use it in other defi applications, such as an LP in a fluxUSDC/ETH pool. In either case, unlike holding USDC, the user would receive the the fluxUSDC rebasing yield.
+fluxUSDC is a yield-bearing (through rebasing) stablecoin where one fluxUSDC is worth 1 USDC. Users' may wish to hold USDC in their wallet or use it in other defi applications, such as an LP in a fluxUSDC/ETH pool. In either case, in contrast to USDC which does not receive yield, the user would receive the the fluxUSDC rebasing yield.
 
 ## Contract Details
 
 The `fluxUSDC.sol` contract implements an ERC20 token. The main additional functions are:
 
-* `mint()`: Receive fUSDC and transfer fluxUSDC to the caller according to the current exchange rate obtained from the fUSDC oracle.
-* `burn()`: The reverse of mint. Receive fluxUSDC and transfer an equivalent amount of fUSDC to the caller.
+* `mint()`: User transfers fUSDC to the contract and receives back an amount of fluxUSDC according to the current exchange rate obtained from the fUSDC oracle.
+* `burn()`: The reverse of mint. User transfers fluxUSDC to the contract and receives back equivalent amount of fUSDC.
 * `rebase()`: Get the latest fUSDC oracle rate and increase the token balances of the fluxUSDC token in all wallets if the oracle rate has increased since the last `rebase()` call. `Rebase()` is automatically called before `mint()` and `burn()` operations.
 
