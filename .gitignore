@@ -1,0 +1,6 @@
+__pycache__
+.history
+.hypothesis/
+build/
+reports/
+reference_other_projects/
